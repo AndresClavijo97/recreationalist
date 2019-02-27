@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
-    layout :set_layout, if: :authenticate_user!
+    # recibe un string con el nombre del layout a set
+    layout :set_layout
 
+    # retorna un string que sera pasado como argumento del metodo layout
     def set_layout
-        "application"
+        'application'
     end
 end
