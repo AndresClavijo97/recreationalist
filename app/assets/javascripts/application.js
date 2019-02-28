@@ -14,3 +14,14 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+function addNameFileChoose() {
+    let file = document.getElementById("user_avatar");
+    file.onchange = function(){
+        if(file.files.length > 0)
+        {
+          document.getElementById('file_name').innerHTML = file.files[0].name;
+        }
+    };  
+}
