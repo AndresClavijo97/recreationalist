@@ -3,6 +3,24 @@
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
+    
+    <div class="file is-centered has-name is-boxed">
+        <%= f.label :avatar, class: 'file-label' do  %>
+          <%= f.file_field :avatar, class: 'file-input' %>
+          <span class="file-cta" onclick="addNameFileChoose();">
+              <span class="file-icon">
+                <i class="fas fa-upload"></i>
+              </span>
+              <span  class="file-label">
+                Choose a file…
+              </span>
+            </span>
+            <span id='file_name' class="file-name has-text-centered">
+              Example ScreenShot 2017-07-29 at 15.54.25.png
+            </span>
+        <% end %>
+      </div>
+
     <div class="field">
       <%= f.label :first_name, class: 'label' %>
       <div class='control'>
