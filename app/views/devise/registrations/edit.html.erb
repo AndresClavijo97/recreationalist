@@ -1,11 +1,58 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2 class="title">Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+  <div class="file is-centered has-name is-boxed">
+      <%= f.label :avatar, class: 'file-label' do  %>
+        <%= f.file_field :avatar, class: 'file-input' %>
+        <span class="file-cta" onclick="addNameFileChoose();">
+            <span class="file-icon">
+              <i class="fas fa-upload"></i>
+            </span>
+            <span  class="file-label">
+              Choose a file…
+            </span>
+          </span>
+          <span id='file_name' class="file-name has-text-centered">
+            Example ScreenShot 2017-07-29 at 15.54.25.png
+          </span>
+      <% end %>
+    </div>
+
   <div class="field">
-    <%= f.label :email, html: { class: 'input'} %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", html: {class: "email"} %>
+    <%= f.label :first_name, class: 'label' %>
+    <div class='control'>
+      <%= f.text_field :first_name, autocomplete: 'email', class: 'input' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name, class: 'label' %>
+    <div class='control'>
+      <%= f.text_field :last_name, class: 'input' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_number, class: 'label' %>
+    <div class='control'>
+      <%= f.text_field :phone_number, class: 'input' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :address, class: 'label' %>
+    <div class='control'>
+      <%= f.text_field :address, class: 'input' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, class: 'label' %>
+    <div class="control">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
+    </div>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -13,31 +60,47 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.label :password, class: 'label' %> <i>(leave blank if you don't want to change it)</i><br />
+    <div class="control">
+        <%= f.password_field :password, autocomplete: "new-password", class: "input" %>
+    </div>
     <% if @minimum_password_length %>
-      <br />
+      <!-- <br /> -->
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.label :password_confirmation, class: 'label' %>
+    <div class="control">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input' %>
+    </div>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+    <%= f.label :current_password, class: 'label' %> <i>(we need your current password to confirm your changes)</i><br />
+    <div class="control">
+        <%= f.password_field :current_password, autocomplete: "current-password", class: 'input' %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
+  <div class="field is-grouped"> 
+    <div class="control">
+        <%= f.submit "Update", class: 'button is-link' %>  
+    </div>
 
-<h3>Cancel my account</h3>
+    <div class="control">
+        <%= link_to "Back", :back, class: 'button' %>
+    </div>
+  </div>  
+<% end %> 
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<br><br>
 
-<%= link_to "Back", :back %>
+<div class="field">
+  <h3 class="title is-4 my-title-margin-bottom">Cancel my account</h3>
+   <p> Unhappy? </p>
+    <div class="control">
+        <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'button is-danger' %>
+    </div>
+</div>
