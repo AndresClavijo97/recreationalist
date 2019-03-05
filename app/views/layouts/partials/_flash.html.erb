@@ -1,0 +1,6 @@
+<% flash.each do |type, message| %>   
+    <div alert class="notification <%= flash_class type %> global-notification has-text-centered">   
+    <button class="delete"></button>
+    <p><%= message %></p>   
+    </div>   
+<% end %> 

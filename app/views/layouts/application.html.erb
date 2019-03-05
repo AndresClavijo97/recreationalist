@@ -10,10 +10,15 @@
   </head>
 
   <body>
+
+     
+    <%= render 'layouts/partials/flash' %>
     <%= render 'layouts/partials/navbar' %>
 
     <section class="section">
-      <%= yield %>
+      <div class="container">
+        <%= yield %>
+      </div>
     </section>
   </body>
 </html>

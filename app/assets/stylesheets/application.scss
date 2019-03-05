@@ -14,3 +14,12 @@
  *= require_self
  */
 @import "bulma";
+
+.image-is-rounded{
+    border-radius: 3.14159265359rem;
+}
+
+.global-notification{
+    // margin-bottom: 0;
+    border-radius: 0;
+}

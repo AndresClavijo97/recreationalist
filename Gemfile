@@ -5,7 +5,8 @@ ruby '2.5.1'
 
 gem 'devise'
 gem 'bulma-rails', '~> 0.7.4'
-
+gem 'gravatar_image_tag'
+gem 'mini_magick'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
